@@ -1,4 +1,7 @@
 package com.zues.service;
 
-public interface UserService {
+import com.baomidou.mybatisplus.extension.service.IService;
+import com.zues.entity.UserEntity;
+
+public interface UserService extends IService<UserEntity> {
 }
