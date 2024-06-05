@@ -95,12 +95,14 @@ class CrudTestApplicationTests {
     @Test
     void testQuery() {
         //有条件的查询
-        List<UserEntity> userEntityList = userDao.selectList(new QueryWrapper<UserEntity>()
-                .ge("age", 20)
-                .like("name", "林"));
-        userEntityList.forEach(System.out::println);
+//        List<UserEntity> userEntityList = userDao.selectList(new QueryWrapper<UserEntity>()
+//                .ge("age", 20)
+//                .like("name", "林"));
+//        userEntityList.forEach(System.out::println);
 
-
-
+        //按年龄降序查询用户，如果年龄相同则按id升序排列
+//        List<UserEntity> userEntityList = userDao.selectList(new QueryWrapper<UserEntity>().orderByDesc("age")
+//                .orderByAsc("id"));
+//        userEntityList.forEach(System.out::println);
     }
 }
