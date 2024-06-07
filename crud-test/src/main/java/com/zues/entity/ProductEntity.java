@@ -1,7 +1,8 @@
 package com.zues.entity;
 
-import com.baomidou.mybatisplus.annotation.TableLogic;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.Version;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,20 +12,26 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-@TableName("user")
-public class UserEntity {
+@TableName("t_product")
+public class ProductEntity {
 
+    @TableId
     private Long id;
 
+    /**
+     * 商品名称
+     */
     private String name;
 
-    private Integer age;
-
-    private Integer sex;
+    /**
+     * 商品价格
+     */
+    private Integer price;
 
     /**
-     * 逻辑删除字段
+     * 乐观锁版本号
      */
-    @TableLogic
-    private Integer isDeleted;
+    @Version
+    private Integer version;
+
 }

@@ -4,4 +4,9 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zues.dao.UserDao">
 
+    <sql id="BaseColums">id,name,age</sql>
+
+    <select id="selectPageByAge" resultType="com.zues.entity.UserEntity">
+        select <include refid="BaseColums"/> FROM user where age > #{age}
+    </select>
 </mapper>
